@@ -350,6 +350,7 @@
       "database": "Base de Datos",
       "ecommerce": "E-Commerce"
     },
+    "reviewsLink": "Lee las reseñas de nuestros clientes",
     "projects": {
       "aiFreightHub": {
         "title": "AI Freight Hub - RnD Hub",

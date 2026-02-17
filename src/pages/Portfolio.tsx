@@ -11,10 +11,12 @@ import {
   Zap,
   Database,
   Layers,
-  ShoppingCart
+  ShoppingCart,
+  Star
 } from 'lucide-react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 interface Project {
   id: number;
@@ -462,6 +464,23 @@ const Portfolio = () => {
         className="relative py-4 md:py-8 px-4"
       >
         <div className="max-w-7xl mx-auto">
+          {/* Reviews Link Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex justify-center mb-6 md:mb-8 relative z-30"
+          >
+            <Link
+              to="/reviews"
+              className="group flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary-500/10 to-accent-500/10 hover:from-primary-500/20 hover:to-accent-500/20 border border-primary-500/30 hover:border-primary-500/50 rounded-full text-white font-semibold transition-all duration-300 backdrop-blur-sm"
+            >
+              <Star className="w-5 h-5 text-primary-400 group-hover:text-primary-300 transition-colors duration-300" />
+              <span className="text-sm md:text-base">{t('portfolio.reviewsLink', 'Leggi le recensioni dei nostri clienti')}</span>
+              <ExternalLink className="w-4 h-4 text-primary-400 group-hover:text-primary-300 transition-colors duration-300" />
+            </Link>
+          </motion.div>
+
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-4 mb-12 relative z-30">
             {/* Mobile Layout */}
