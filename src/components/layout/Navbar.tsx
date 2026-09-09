@@ -2,33 +2,44 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sun, Moon } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
 import { useTheme } from '../../context/ThemeContext'
 import logo from '../../assets/logos/logo-bianco.png'
-import ContactFormModal from '../modals/ContactFormModal'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
-  const { t } = useTranslation()
   const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
     }
-    window.addEventListener('scroll', handleScroll)
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    setIsOpen(false)
+  }, [location.key])
+
+  useEffect(() => {
+    const escape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false)
+        document.querySelector<HTMLButtonElement>('[aria-controls="mobile-navigation"]')?.focus()
+      }
+    }
+    if (isOpen) document.addEventListener('keydown', escape)
+    return () => document.removeEventListener('keydown', escape)
+  }, [isOpen])
+
   const navItems = [
-    { name: 'nav.home', path: '/' },
-    { name: 'nav.about', path: '/about', isExtended: true },
-    { name: 'nav.services', path: '/services' },
-    { name: 'nav.portfolio', path: '/portfolio' },
-    { name: 'nav.contact', path: '/contact' },
+    { name: 'Home', path: '/' },
+    { name: 'Team', path: '/about' },
+    { name: 'Servizi', path: '/services' },
+    { name: 'Lavori', path: '/portfolio' },
   ]
 
   const toggleMenu = () => {
@@ -45,10 +56,10 @@ const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`fixed top-0 lg:top-4 left-0 right-0 z-50 transition-all duration-500 flex justify-center w-full lg:w-auto max-w-full lg:max-w-[80vw] ${
+        className={`fixed top-0 lg:top-4 left-0 right-0 z-50 transition-all duration-500 flex justify-center w-full lg:w-auto max-w-full lg:max-w-[94vw] xl:max-w-[88vw] ${
           scrolled 
             ? 'bg-gray-900/95 lg:bg-gray-900/80 backdrop-blur-md border-b lg:border border-white/10 shadow-lg lg:shadow-premium' 
-            : 'bg-transparent'
+            : 'bg-gray-900/95 lg:bg-transparent'
         } lg:rounded-2xl`}
         style={{ 
           margin: '0 auto'
@@ -66,7 +77,7 @@ const Navbar = () => {
                 <img 
                   src={logo} 
                   alt="Webbitz Logo" 
-                  className="w-36 h-36 object-contain navbar-logo"
+                  className="w-28 sm:w-36 h-auto object-contain navbar-logo"
                   style={{ filter: 'drop-shadow(0 0 10px rgba(232, 80, 2, 0.3))' }}
                 />
                 <div className="absolute inset-0 rounded-xl blur-lg opacity-30 group-hover:opacity-60 transition-opacity duration-300"></div>
@@ -74,7 +85,7 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop Navigation - Centrato */}
-            <div className="hidden lg:flex items-center space-x-6 absolute left-1/2 transform -translate-x-1/2">
+            <div className="hidden lg:flex items-center gap-0 xl:gap-3">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
@@ -83,9 +94,9 @@ const Navbar = () => {
                     location.pathname === item.path
                       ? 'text-primary-400'
                       : 'text-gray-300 hover:text-primary-400'
-                  } ${item.isExtended ? 'px-6' : ''}`}
+                  }`}
                 >
-                  {t(item.name)}
+                  {item.name}
                   <motion.div
                     className="absolute bottom-0 left-0 h-0.5 bg-gradient-primary"
                     initial={{ width: 0 }}
@@ -99,40 +110,25 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* CTA Button */}
-            <div className="hidden lg:flex items-center flex-shrink-0">
+            <div className="flex items-center gap-2 md:gap-3">
               <button
-                onClick={() => {
-                  setIsContactModalOpen(true)
-                  closeMenu()
-                }}
-                className="btn-primary group relative overflow-hidden py-2 px-4 text-sm"
-              >
-                <span className="relative z-10">{t('nav.startNow')}</span>
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-primary-700 to-primary-900"
-                  initial={{ x: '-100%' }}
-                  whileHover={{ x: 0 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </button>
-            </div>
-
-            {/* Mobile Menu Button + Theme Toggle */}
-            <div className="lg:hidden flex items-center gap-2">
-              {/* Theme Toggle - Mobile */}
-              <button
+                type="button"
                 onClick={toggleTheme}
-                className="p-2 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300"
-                aria-label={theme === 'dark' ? 'Attiva tema chiaro' : 'Attiva tema scuro'}
+                className="theme-switch"
+                aria-label={theme === 'dark' ? 'Attiva modalità Day' : 'Attiva modalità Night'}
+                title={theme === 'dark' ? 'Passa alla modalità giorno' : 'Passa alla modalità notte'}
               >
-                {theme === 'dark' ? <Sun className="w-6 h-6 text-primary-400" /> : <Moon className="w-6 h-6 text-primary-400" />}
+                <span className={theme === 'light' ? 'theme-choice selected' : 'theme-choice'}><Sun size={16} aria-hidden="true" /></span>
+                <span className={theme === 'dark' ? 'theme-choice selected' : 'theme-choice'}><Moon size={16} aria-hidden="true" /></span>
               </button>
-              
+              <Link to="/contact#richiesta" className="btn-primary hidden lg:inline-flex items-center justify-center !py-3 !px-4 !text-sm whitespace-nowrap">Lascia una richiesta</Link>
               {/* Hamburger Menu */}
               <button
                 onClick={toggleMenu}
-                className="p-2 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 text-white"
+                aria-label={isOpen ? 'Chiudi menu' : 'Apri menu'}
+                aria-expanded={isOpen}
+                aria-controls="mobile-navigation"
+                className="lg:hidden p-2 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 text-white"
               >
                 <AnimatePresence mode="wait">
                   {isOpen ? (
@@ -170,7 +166,8 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden absolute top-full left-0 right-0 bg-gray-900 shadow-xl border-t border-white/10 lg:rounded-b-2xl lg:mx-4 lg:mt-2"
+              id="mobile-navigation"
+              className="lg:hidden max-h-[calc(100dvh-80px)] overflow-y-auto absolute top-full left-0 right-0 bg-gray-900 shadow-xl border-t border-white/10 lg:rounded-b-2xl lg:mx-4 lg:mt-2"
             >
               <div className="px-6 py-8">
                 <div className="flex flex-col space-y-3">
@@ -190,7 +187,7 @@ const Navbar = () => {
                             : 'text-gray-200 hover:bg-white/10 hover:text-primary-400'
                         }`}
                       >
-                        {t(item.name)}
+                        {item.name}
                       </Link>
                     </motion.div>
                   ))}
@@ -200,15 +197,8 @@ const Navbar = () => {
                     transition={{ delay: navItems.length * 0.1 }}
                     className="pt-6"
                   >
-                    <button
-                      onClick={() => {
-                        setIsContactModalOpen(true)
-                        closeMenu()
-                      }}
-                      className="btn-primary w-full text-center py-4 text-lg font-semibold shadow-lg"
-                    >
-                      {t('nav.startNow')}
-                    </button>
+                    <Link to="/contact#richiesta" onClick={closeMenu} className="btn-primary block w-full text-center py-4 text-base">Lascia una richiesta</Link>
+                    <a href="tel:+393391797616" className="block text-center text-gray-200 py-4">Chiama 339 179 7616</a>
                   </motion.div>
                 </div>
               </div>
@@ -217,7 +207,7 @@ const Navbar = () => {
         </AnimatePresence>
       </motion.nav>
 
-      <ContactFormModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
+
     </>
   )
 }

@@ -1,15 +1,13 @@
 import { motion, useMotionValue } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
-import { ArrowRight, Code, Bot, Zap, Sparkles, Globe, Cpu, Rocket } from 'lucide-react'
+import { ArrowRight, Code, Bot, Zap, Phone, Globe, Cpu, Rocket } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
-import logo from '../../assets/logos/favicon.png'
+import logo from '../../assets/logos/background.webp'
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isHovered, setIsHovered] = useState(false)
   const heroRef = useRef<HTMLDivElement>(null)
-  const { t } = useTranslation()
   
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
@@ -110,7 +108,7 @@ const Hero = () => {
       />
 
       {/* Floating Tech Icons */}
-      <div className="hidden md:block">
+      <div className="hidden md:block" aria-hidden="true">
         {/* Posizionamento assoluto personalizzato per ogni icona */}
         <motion.div
           className="absolute text-primary-400/30"
@@ -169,7 +167,7 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 text-center px-4 max-w-6xl mx-auto -mt-12">
+      <div className="relative z-10 text-center px-4 max-w-7xl mx-auto -mt-12">
         <motion.div
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
@@ -180,10 +178,10 @@ const Hero = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-                          className="text-4xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-white via-primary-200 to-primary-400 bg-clip-text text-transparent leading-tight"
+                          className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 bg-gradient-to-r from-white via-primary-200 to-primary-400 bg-clip-text text-transparent leading-tight"
           >
-            {t('hero.title1')}
-            <br />
+            Siti web, campagne ads
+            {' '}
             <motion.span
               animate={{ 
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
@@ -191,32 +189,18 @@ const Hero = () => {
               transition={{ duration: 3, repeat: Infinity }}
               className="bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 bg-clip-text text-transparent bg-[length:200%_100%]"
             >
-              {t('hero.title2')}
+              e strumenti AI.
             </motion.span>
           </motion.h1>
-
-          {/* Slogan */}
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.35 }}
-            className="text-base md:text-xl italic text-center mb-4 md:mb-6"
-          >
-            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">We Design, We Build, </span>
-            <span className="text-primary-500 font-semibold">You</span>
-            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"> Grow.</span>
-          </motion.p>
 
           {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="text-xs md:text-lg text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed"
+            className="text-base md:text-lg text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            <span className="text-primary-700 font-semibold">{t('hero.subtitle.part1')}</span>{t('hero.subtitle.part2')}
-            <span className="text-primary-700 font-semibold">{t('hero.subtitle.part3')}</span>{t('hero.subtitle.part4')}
-            <span className="text-primary-700 font-semibold">{t('hero.subtitle.part5')}</span>{t('hero.subtitle.part6')}
+            Realizziamo siti per PMI e professionisti, gestiamo campagne Meta e Google e sviluppiamo strumenti AI per semplificare il lavoro.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -226,33 +210,12 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mt-4 mb-8"
           >
-            <Link to="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(232, 80, 2, 0.3)" }}
-                whileTap={{ scale: 0.95 }}
-                className="group relative bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold py-3 px-6 md:py-4 md:px-8 rounded-full transition-all duration-500 ease-out flex items-center gap-2 md:gap-3 overflow-hidden text-sm md:text-base"
-              >
-                <span className="relative z-10">{t('hero.cta.primary')}</span>
-                <ArrowRight className="relative z-10 group-hover:translate-x-1 transition-transform duration-300" size={18} />
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-400 via-primary-500 to-accent-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
-              </motion.button>
+            <Link to="/contact#richiesta" className="bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold py-3 px-6 md:py-4 md:px-8 rounded-full flex items-center gap-3 text-sm md:text-base hover:shadow-glow transition-shadow">
+              Lascia una richiesta <ArrowRight size={18} aria-hidden="true" />
             </Link>
-
-            <Link to="/portfolio">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group bg-white/10 backdrop-blur-xl border border-white/20 hover:border-primary-400/50 text-white font-bold py-3 px-6 md:py-4 md:px-8 rounded-full transition-all duration-300 flex items-center gap-2 md:gap-3 hover:shadow-lg text-sm md:text-base"
-              >
-                <span>{t('hero.cta.secondary')}</span>
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                >
-                  <Sparkles className="text-primary-600" size={18} />
-                </motion.div>
-              </motion.button>
-            </Link>
+            <a href="tel:+393391797616" className="bg-white/10 border border-white/20 text-white font-semibold py-3 px-6 md:py-4 md:px-8 rounded-full flex items-center gap-3 text-sm md:text-base hover:border-primary-400/50 transition-colors">
+              <Phone size={18} aria-hidden="true" />339 179 7616
+            </a>
           </motion.div>
         </motion.div>
       </div>
