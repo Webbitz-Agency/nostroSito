@@ -7,14 +7,20 @@ import type { Project } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 import ProjectDialog from "../components/ProjectDialog";
 import { findProjectBySlug, projectSlug } from "../utils/projectSlug";
-const categories = [
+type CategoryId = "all" | "web" | "ads" | "ai";
+
+type CategoryFilter = {
+  id: CategoryId;
+  label: string;
+  shortLabel?: string;
+};
+
+const categories: CategoryFilter[] = [
   { id: "all", label: "Tutti i progetti" },
   { id: "web", label: "Sviluppo web" },
   { id: "ads", label: "Campagne ads" },
   { id: "ai", label: "Strumenti AI", shortLabel: "AI" },
-] as const;
-
-type CategoryId = (typeof categories)[number]["id"];
+];
 
 function isCategoryId(value: string | null): value is Exclude<CategoryId, "all"> {
   return value === "web" || value === "ads" || value === "ai";
