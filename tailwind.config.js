@@ -47,8 +47,8 @@ export default {
         }
       },
       fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
-        'display': ['Space Grotesk', 'system-ui', 'sans-serif'],
+        'sans': ['Manrope', 'system-ui', 'sans-serif'],
+        'display': ['Unbounded', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.8s ease-out forwards',

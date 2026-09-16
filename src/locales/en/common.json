@@ -802,7 +802,7 @@
     "info": {
       "email": {
         "title": "Email",
-        "value": "webbitz.official@gmail.com",
+        "value": "diego.simoncini@webbitz.it",
         "description": "We respond within 2 hours"
       },
       "phone": {
@@ -977,7 +977,7 @@
         "title": "Data controller",
         "content": [
           "The data controller is Webbitz.",
-          "For any privacy request you can contact us by email: webbitz.official@gmail.com."
+          "For any privacy request you can contact us by email: diego.simoncini@webbitz.it."
         ]
       },
       {
@@ -1054,7 +1054,7 @@
         "content": [
           "You may exercise rights of access, rectification, erasure, restriction, portability and objection as provided by the GDPR.",
           "You also have the right to lodge a complaint with your supervisory authority.",
-          "To exercise your rights, email: webbitz.official@gmail.com."
+          "To exercise your rights, email: diego.simoncini@webbitz.it."
         ]
       },
       {
@@ -1109,7 +1109,7 @@
   "footer": {
     "description": "We transform your ideas into extraordinary digital experiences. Premium solutions for companies that want to stand out.",
     "contact": {
-      "email": "webbitz.official@gmail.com",
+      "email": "diego.simoncini@webbitz.it",
       "phone": "+39 339 179 7616",
       "location": "Pontedera (PI), Italy"
     },

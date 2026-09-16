@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 
-const TO_EMAIL = 'webbitz.official@gmail.com';
+const TO_EMAIL = 'diego.simoncini@webbitz.it';
 const FROM_EMAIL = process.env.GMAIL_USER || 'reservationwebbitz@gmail.com';
 const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD;
 

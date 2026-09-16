@@ -6,102 +6,88 @@
     },
     "hero": {
       "title": "Privacy Policy",
-      "subtitle": "Questa informativa descrive come trattiamo i dati personali quando visiti il sito o ci contatti tramite i nostri canali."
+      "subtitle": "Come trattiamo i dati quando visiti il sito o ci contatti."
     },
     "lastUpdatedLabel": "Ultimo aggiornamento:",
-    "lastUpdatedDate": "09/09/2026",
+    "lastUpdatedDate": "16/09/2026",
     "tocTitle": "Indice",
     "sections": [
       {
         "id": "controller",
-        "title": "Titolare del trattamento",
+        "title": "1. Titolare del trattamento",
         "content": [
-          "Il Titolare del trattamento è Webbitz.",
-          "Per qualunque richiesta relativa alla privacy puoi contattarci via email: webbitz.official@gmail.com."
+          "Titolare: Diego Simoncini, operante con il nome Webbitz.",
+          "Partita IVA: 02524780505.",
+          "Email di contatto e privacy: diego.simoncini@webbitz.it.",
+          "Telefono e WhatsApp: +39 339 179 7616 (+393391797616).",
+          "Questa informativa riguarda il sito webbitz.it e le richieste ricevute tramite il modulo di contatto e WhatsApp. È resa ai sensi dell’art. 13 del Regolamento (UE) 2016/679 (GDPR) e del D.lgs. 196/2003, come modificato dal D.lgs. 101/2018."
         ]
       },
       {
         "id": "data",
-        "title": "Dati trattati",
+        "title": "2. Dati che raccogliamo",
         "content": [
-          "Dati forniti dall’utente: quando compili il form di contatto raccogliamo nome, email, telefono se fornito, servizio di interesse se indicato e contenuto del messaggio.",
-          "Dati di navigazione: come la maggior parte dei siti, i sistemi informatici e le procedure software possono acquisire informazioni tecniche (es. indirizzo IP, user agent, pagine visitate, data/ora) per il corretto funzionamento e la sicurezza.",
-          "Il sito utilizza strumenti di misurazione e analisi delle visite (Vercel Analytics)."
+          "Quando compili il form di contatto raccogliamo i dati che inserisci (ad esempio nome, email, telefono se indicato, servizio di interesse e contenuto del messaggio). Se ci scrivi su WhatsApp riceviamo il numero e i contenuti che scegli di inviare.",
+          "La navigazione comporta la trasmissione di dati tecnici, quali indirizzo IP, URL richiesto, data e ora, informazioni sul browser ed esito della richiesta, che possono essere trattati dall’infrastruttura di hosting per erogare e proteggere il sito.",
+          "Descrivi la tua richiesta senza inserire dati sanitari, altre categorie particolari di dati, dati giudiziari, password o informazioni personali di clienti, dipendenti o terzi non necessarie."
         ]
       },
       {
         "id": "purposes",
-        "title": "Finalità del trattamento",
+        "title": "3. Finalità e basi giuridiche",
         "content": [
-          "Gestire e rispondere alle richieste inviate tramite form/contatti e fornire informazioni su servizi e preventivi.",
-          "Garantire il funzionamento del sito, prevenire abusi e migliorare l’esperienza utente.",
-          "Analizzare in forma aggregata le performance del sito (es. statistiche di utilizzo) per ottimizzarne contenuti e navigazione."
+          "Gestire e rispondere alle richieste: esaminare quanto descritto, ricontattarti via email e telefono, fissare un confronto ed eventualmente preparare una proposta. La base è l’esecuzione di misure precontrattuali richieste dall’interessato (art. 6, par. 1, lett. b, GDPR). Se agisci per un’azienda, il trattamento dei tuoi recapiti professionali si basa sul legittimo interesse a gestire la richiesta dell’azienda e le relative comunicazioni (lett. f).",
+          "Funzionamento, sicurezza e tutela dei diritti: prevenire abusi, documentare la richiesta e gestire eventuali contestazioni, sulla base del legittimo interesse a proteggere il servizio e i diritti del titolare (lett. f).",
+          "Obblighi di legge: adempiere a richieste vincolanti delle autorità e agli obblighi applicabili (lett. c).",
+          "Vercel Web Analytics misura le visite in forma aggregata, senza cookie, per comprendere l’utilizzo del sito, sulla base del legittimo interesse a valutare e migliorare i contenuti."
         ]
       },
       {
-        "id": "legal",
-        "title": "Base giuridica",
+        "id": "conferimento",
+        "title": "4. Conferimento dei dati",
         "content": [
-          "Esecuzione di misure precontrattuali/contrattuali (rispondere a richieste e fornire un servizio).",
-          "Legittimo interesse (sicurezza del sito, prevenzione frodi/abusi, miglioramento del servizio).",
-          "Consenso, ove richiesto, per cookie e strumenti non strettamente necessari."
-        ]
-      },
-      {
-        "id": "processing",
-        "title": "Modalità del trattamento e sicurezza",
-        "content": [
-          "Il trattamento avviene con strumenti informatici e organizzativi adeguati alle finalità indicate.",
-          "Adottiamo misure ragionevoli per proteggere i dati; nessun sistema è tuttavia totalmente sicuro."
-        ]
-      },
-      {
-        "id": "retention",
-        "title": "Conservazione dei dati",
-        "content": [
-          "Conserviamo i dati per il tempo necessario a gestire le richieste e per obblighi di legge o esigenze difensive.",
-          "In linea generale: i dati di contatto e i messaggi possono essere conservati fino a 12 mesi, salvo ulteriori necessità connesse al rapporto o a obblighi normativi."
+          "I campi necessari del modulo sono richiesti per comprendere la richiesta e ricontattarti. Senza questi dati il modulo non può essere inviato. I dettagli aggiuntivi sono facoltativi e la loro omissione non impedisce di chiedere informazioni."
         ]
       },
       {
         "id": "recipients",
-        "title": "Destinatari e categorie di destinatari",
+        "title": "5. Modalità e destinatari",
         "content": [
-          "I dati possono essere trattati da fornitori che supportano l’erogazione del sito e dei servizi (es. hosting, invio email, analytics, mappe) in qualità di responsabili o autonomi titolari, secondo i rispettivi ruoli.",
-          "Non vendiamo i dati personali. I dati possono essere comunicati alle autorità competenti se previsto dalla legge."
+          "Le richieste sono gestite dal titolare e possono essere inoltrate via email. L’hosting e le statistiche aggregate sono forniti da Vercel. Per i messaggi WhatsApp si applicano anche le condizioni del relativo servizio. Su alcune pagine può essere caricata la mappa interattiva di OpenStreetMap, con richieste tecniche ai server del fornitore.",
+          "Possono accedere ai dati il titolare, le persone autorizzate e i fornitori necessari per hosting, posta elettronica e assistenza tecnica, nei limiti delle rispettive attività e, quando operano per conto del titolare, sulla base di accordi ai sensi dell’art. 28 GDPR. I dati non sono diffusi né venduti.",
+          "Le autorità e i consulenti possono ricevere i soli dati necessari quando previsto dalla legge o per la tutela di un diritto."
         ]
       },
       {
-        "id": "third-parties",
-        "title": "Servizi di terze parti utilizzati",
+        "id": "retention",
+        "title": "6. Conservazione",
         "content": [
-          "Modulo contatti: i dati inseriti vengono inviati ai nostri sistemi e inoltrati via email per poter rispondere alla richiesta.",
-          "Analytics: utilizziamo strumenti di misurazione (es. Vercel Analytics) per capire come viene usato il sito e migliorarlo.",
-          "Mappe: la mappa interattiva carica le immagini cartografiche di OpenStreetMap. Il caricamento comporta richieste ai server del fornitore, che ricevono i dati tecnici di connessione."
+          "Le richieste che non danno luogo a un incarico sono conservate per un massimo di 12 mesi dall’ultimo scambio relativo alla consulenza, poi cancellate o rese anonime. In caso di contestazione, i soli dati necessari possono essere conservati sino alla sua definizione e per i termini di tutela applicabili.",
+          "Se nasce un rapporto contrattuale, i dati necessari alla sua esecuzione e agli obblighi amministrativi sono trattati secondo l’informativa relativa all’incarico.",
+          "I dati tecnici sono conservati per il tempo necessario all’erogazione e alla sicurezza del servizio, secondo la configurazione dei fornitori."
         ]
       },
       {
-        "id": "cookies",
-        "title": "Cookie e preferenze",
+        "id": "transfers",
+        "title": "7. Fornitori e trasferimenti fuori dallo SEE",
         "content": [
-          "Puoi gestire o disabilitare i cookie dalle impostazioni del browser. La disabilitazione dei cookie tecnici potrebbe compromettere alcune funzionalità del sito.",
-          "Se vengono impiegati cookie o strumenti non essenziali, potremmo richiedere il consenso tramite apposito banner/strumento di gestione preferenze."
+          "I servizi di hosting, WhatsApp e altri strumenti tecnici possono comportare il trattamento dei dati anche al di fuori dello Spazio economico europeo. Gli eventuali trasferimenti devono rispettare il capo V GDPR: decisioni di adeguatezza applicabili oppure clausole contrattuali standard e, quando necessarie, misure supplementari. Puoi chiedere al titolare l’elenco aggiornato dei destinatari e una copia delle garanzie applicabili."
         ]
       },
       {
         "id": "rights",
-        "title": "Diritti dell’interessato",
+        "title": "8. I tuoi diritti",
         "content": [
-          "Hai diritto di ottenere accesso ai dati, rettifica, cancellazione, limitazione, portabilità e di opporti al trattamento nei casi previsti dal GDPR.",
-          "Hai inoltre diritto di proporre reclamo al Garante per la Protezione dei Dati Personali.",
-          "Per esercitare i diritti puoi scrivere a: webbitz.official@gmail.com."
+          "Contattando il titolare ai recapiti sopra indicati puoi chiedere accesso, rettifica, cancellazione, limitazione e, nei casi previsti, portabilità dei dati. Puoi opporti ai trattamenti basati sul legittimo interesse per motivi legati alla tua situazione particolare. Qualora un trattamento si basi sul consenso, puoi revocarlo senza pregiudicare quanto effettuato prima della revoca.",
+          "Riceverai riscontro di regola entro un mese; un’eventuale proroga, fino a ulteriori due mesi nei casi previsti dal GDPR, sarà comunicata entro il primo mese con la motivazione. Puoi inoltre proporre reclamo al Garante per la protezione dei dati personali e ricorrere all’autorità giudiziaria."
         ]
       },
       {
-        "id": "changes",
-        "title": "Modifiche a questa informativa",
+        "id": "cookies",
+        "title": "9. Cookie e aggiornamenti",
         "content": [
-          "Potremmo aggiornare questa informativa periodicamente. Le modifiche saranno pubblicate su questa pagina con indicazione della data di aggiornamento."
+          "Puoi gestire o disabilitare i cookie dalle impostazioni del browser. La disabilitazione dei cookie tecnici potrebbe compromettere alcune funzionalità del sito. Se vengono impiegati cookie o strumenti non essenziali, potremmo richiedere il consenso tramite apposito banner o strumento di gestione preferenze.",
+          "La data in apertura identifica questa versione; eventuali nuovi trattamenti saranno accompagnati dall’aggiornamento dell’informativa e, quando necessario, da una comunicazione specifica."
         ]
       }
     ]
@@ -109,92 +95,93 @@
   "terms": {
     "meta": {
       "title": "Termini e Condizioni | Webbitz",
-      "description": "Termini e condizioni per l'utilizzo dei servizi offerti da Webbitz. Leggi attentamente prima di richiedere un servizio."
+      "description": "Termini e condizioni per l'utilizzo del sito e dei servizi offerti da Webbitz."
     },
     "hero": {
       "title": "Termini e Condizioni",
-      "subtitle": "Le condizioni che regolano i servizi offerti da Webbitz. Leggile con attenzione prima di procedere."
+      "subtitle": "Le condizioni per utilizzare il sito e richiedere informazioni o un preventivo."
     },
     "lastUpdatedLabel": "Ultimo aggiornamento:",
-    "lastUpdatedDate": "09/09/2026",
+    "lastUpdatedDate": "16/09/2026",
     "tocTitle": "Indice",
     "sections": [
       {
-        "id": "introduzione",
-        "title": "Introduzione e accettazione dei termini",
+        "id": "gestore",
+        "title": "1. Gestore e informazioni legali",
         "content": [
-          "Accedendo a questo sito e/o richiedendo un servizio a Webbitz, dichiari di aver letto e accettato i presenti Termini e Condizioni.",
-          "Per i progetti su misura, l'accettazione può avvenire anche tramite conferma del preventivo/accordo scritto (email o documento). In caso di differenze, prevalgono i dettagli indicati nel preventivo accettato."
+          "Titolare: Diego Simoncini, operante con il nome Webbitz.",
+          "Partita IVA: 02524780505.",
+          "Email di contatto e privacy: diego.simoncini@webbitz.it.",
+          "Telefono e WhatsApp: +39 339 179 7616 (+393391797616).",
+          "Webbitz è il nome con cui Diego Simoncini presenta i propri servizi di consulenza, sviluppo web, campagne ads e strumenti digitali. Queste informazioni identificano il gestore anche ai fini dell’art. 7 D.lgs. 70/2003."
         ]
       },
       {
-        "id": "informazioni-fornitore",
-        "title": "Informazioni sul fornitore del servizio (Webbitz)",
+        "id": "oggetto",
+        "title": "2. Oggetto del sito",
         "content": [
-          "Webbitz è un team indipendente che offre servizi di web development e soluzioni digitali per piccole e medie imprese.",
-          "Al momento Webbitz opera come realtà non strutturata in forma societaria: i dettagli amministrativi e contrattuali vengono concordati caso per caso.",
-          "Contatti: webbitz.official@gmail.com."
+          "Il sito presenta servizi rivolti principalmente ad aziende e professionisti e permette di richiedere un primo confronto sul proprio caso. Non consente di acquistare servizi o effettuare pagamenti online. Gli esempi illustrano possibili applicazioni e non costituiscono promesse di risultati, risparmi o tempi di realizzazione per ogni progetto."
         ]
       },
       {
-        "id": "oggetto-servizi",
-        "title": "Oggetto dei servizi offerti",
+        "id": "richiesta",
+        "title": "3. Richiesta di informazioni o preventivo",
         "content": [
-          "Webbitz offre sviluppo web (siti per PMI e professionisti, landing page ed e-commerce), gestione campagne ads su Meta e Google e sviluppo di strumenti AI.",
-          "Ogni servizio è definito \"su misura\": cosa è incluso (e cosa non lo è) viene chiarito nel preventivo e/o nella proposta progettuale."
+          "Inviando il modulo chiedi di essere ricontattato, anche per telefono o WhatsApp, per approfondire il caso e fissare un confronto. La richiesta e il primo confronto sono gratuiti e non comportano obblighi di acquisto, abbonamenti o l’avvio di un incarico a pagamento.",
+          "La conferma di ricezione non equivale alla prenotazione di un appuntamento: disponibilità, modalità e tempi sono concordati successivamente. La valutazione dipende dalle informazioni che fornisci ed esprime un’opinione professionale iniziale: non è un audit certificato e non include progettazione di dettaglio, sviluppo o consegna di software."
         ]
       },
       {
-        "id": "modalita-erogazione",
-        "title": "Modalità di erogazione dei servizi",
+        "id": "incarichi",
+        "title": "4. Eventuali incarichi successivi",
         "content": [
-          "Le attività vengono svolte da remoto salvo diverso accordo. Tempistiche e milestone vengono concordate in base alla complessità e alle priorità del cliente.",
-          "Il cliente si impegna a fornire in tempi ragionevoli materiali, accessi, contenuti e feedback necessari (es. testi, immagini, credenziali, approvazioni). Ritardi di questo tipo possono spostare le scadenze.",
-          "Eventuali richieste fuori perimetro (nuove funzionalità, pagine extra, revisioni sostanziali) possono comportare una revisione di tempi e costi, concordata prima di procedere."
+          "Attività a pagamento, sviluppo, assistenza e manutenzione richiedono una proposta e un accordo separati, con oggetto, corrispettivi e imposte applicabili, tempi, responsabilità, diritti sul software e condizioni del servizio. L’invio del modulo non sostituisce tale accordo.",
+          "Se l’incarico comporta trattamento di dati per conto del cliente, i ruoli e gli eventuali accordi privacy saranno definiti prima dell’accesso a tali dati."
         ]
       },
       {
-        "id": "prezzi-pagamenti",
-        "title": "Prezzi, preventivi e pagamenti",
+        "id": "uso-corretto",
+        "title": "5. Uso corretto e informazioni inviate",
         "content": [
-          "I prezzi non sono \"a listino\": vengono stabiliti tramite preventivo in base a obiettivi, complessità e tempi di consegna.",
-          "Salvo diverso accordo, può essere richiesto un acconto per avviare i lavori e un saldo alla consegna (o pagamenti per milestone). Modalità e scadenze sono indicate nel preventivo.",
-          "Eventuali costi di terze parti (es. hosting, domini, strumenti, API, licenze, servizi di invio messaggi) non sono inclusi se non esplicitamente indicato."
+          "Fornisci recapiti corretti e informazioni che sei autorizzato a comunicare. Non utilizzare il modulo per spam, contenuti illeciti, credenziali, segreti aziendali o dati personali di terzi non necessari. Non sono consentiti tentativi di compromettere la sicurezza o la disponibilità del sito.",
+          "L’invio di una descrizione non trasferisce al gestore diritti sui tuoi materiali e non costituisce di per sé un accordo di riservatezza specifico. Prima di condividere documentazione riservata, concorda modalità e tutele con il titolare."
         ]
       },
       {
-        "id": "proprieta-intellettuale",
-        "title": "Proprietà intellettuale e utilizzo dei materiali",
+        "id": "ip",
+        "title": "6. Contenuti e proprietà intellettuale",
         "content": [
-          "Fino al pagamento completo, i deliverable (es. codice, layout, file progettuali) restano di proprietà di Webbitz o dei rispettivi titolari.",
-          "A saldo avvenuto, il cliente ottiene il diritto di utilizzare quanto consegnato per le finalità concordate. La cessione completa dei diritti (se richiesta) deve essere indicata espressamente nell'accordo.",
-          "Il cliente garantisce di avere i diritti per i materiali forniti (testi, immagini, loghi) e manleva Webbitz da contestazioni derivanti da utilizzi non autorizzati.",
-          "Componenti open source o di terze parti restano soggetti alle rispettive licenze."
+          "Testi, grafica, marchi e altri materiali del sito appartengono al gestore o ai rispettivi titolari. È consentita la consultazione per valutare i servizi e la condivisione dei collegamenti. Riproduzioni o utilizzi ulteriori richiedono autorizzazione, salvo quanto consentito dalla legge.",
+          "Per i progetti commissionati, fino al pagamento completo i deliverable restano di proprietà del gestore o dei rispettivi titolari. A saldo avvenuto, il cliente ottiene il diritto di utilizzare quanto consegnato per le finalità concordate. Componenti open source o di terze parti restano soggetti alle rispettive licenze."
         ]
       },
       {
-        "id": "limitazione-responsabilita",
-        "title": "Limitazione di responsabilità",
+        "id": "responsabilita",
+        "title": "7. Disponibilità e responsabilità",
         "content": [
-          "Webbitz si impegna a lavorare con professionalità e cura, ma non può garantire risultati specifici non controllabili (es. posizionamenti SEO, conversioni, performance di piattaforme terze, consegna messaggi su canali esterni).",
-          "Salvo dolo o colpa grave, Webbitz non è responsabile per danni indiretti, perdita di profitti o interruzioni dovute a cause esterne (es. downtime hosting, malfunzionamenti di terze parti, eventi di forza maggiore).",
-          "Il cliente è responsabile dell'uso del sito/strumenti e dei contenuti pubblicati, inclusi gli adempimenti legali (cookie banner, privacy, testi obbligatori), salvo che tali servizi siano stati espressamente inclusi nel perimetro."
+          "Il gestore cura l’aggiornamento del sito, che può subire interruzioni per manutenzione o problemi tecnici. In caso di errore nell’invio, il modulo lo segnala e la richiesta deve essere ripetuta. Eventuali collegamenti esterni rimandano a servizi gestiti dai rispettivi soggetti.",
+          "Restano ferme le responsabilità previste dalla legge, incluse quelle per dolo o colpa grave, e le tutele inderogabili degli utenti. Questi termini non limitano tali diritti."
         ]
       },
       {
-        "id": "modifiche-termini",
-        "title": "Modifiche ai termini",
+        "id": "dati-personali",
+        "title": "8. Dati personali",
         "content": [
-          "Possiamo aggiornare questi Termini e Condizioni per adeguamenti normativi o evoluzioni del servizio.",
-          "Le modifiche vengono pubblicate su questa pagina con la data di aggiornamento. L'uso continuato del sito dopo la pubblicazione implica accettazione dei nuovi termini."
+          "Il trattamento dei dati è descritto nella Privacy Policy. L’invio del modulo non autorizza l’invio di marketing."
         ]
       },
       {
-        "id": "legge-foro",
-        "title": "Legge applicabile e foro competente",
+        "id": "legge",
+        "title": "9. Legge applicabile e controversie",
         "content": [
-          "I presenti Termini sono regolati dalla legge italiana.",
-          "Salvo diversa previsione inderogabile, per eventuali controversie è competente il foro del luogo di residenza/domicilio del consumatore; negli altri casi, il foro competente è quello concordato tra le parti nel preventivo/accordo."
+          "Si applica la legge italiana, ferme le norme inderogabili applicabili. Per richieste o contestazioni puoi contattare il gestore ai recapiti indicati sopra. La competenza giudiziaria è determinata dalla legge; se agisci come consumatore restano salvi i diritti del Codice del consumo (D.lgs. 206/2005), compreso il foro del consumatore ove applicabile."
+        ]
+      },
+      {
+        "id": "aggiornamenti",
+        "title": "10. Versione e aggiornamenti",
+        "content": [
+          "Puoi salvare o stampare questa pagina con le funzioni del browser. La versione applicabile alla tua richiesta è quella disponibile al momento dell’invio. Le modifiche successive non si applicano retroattivamente alla richiesta già inviata."
         ]
       }
     ]

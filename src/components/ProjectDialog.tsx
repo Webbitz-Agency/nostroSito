@@ -10,7 +10,7 @@ export default function ProjectDialog({ project, onClose }: { project: Project; 
     const dialog = ref.current!
     const previousFocus = document.activeElement as HTMLElement | null
     const previousOverflow = document.body.style.overflow
-    dialog.showModal()
+    if (!dialog.open) dialog.showModal()
     document.body.style.overflow = 'hidden'
     return () => {
       dialog.close()
@@ -36,11 +36,24 @@ export default function ProjectDialog({ project, onClose }: { project: Project; 
       {project.image && <div className={`project-dialog-image ${project.imageKind === 'logo' ? 'client-logo' : ''} ${project.imageTheme === 'dark' ? 'client-logo-dark' : ''}`}><img src={project.image} alt={project.imageKind === 'logo' ? `Logo ${project.name}` : `Il progetto ${project.name}`} /></div>}
       <div className="project-dialog-content">
         <h2 id="project-dialog-title">{project.name}</h2>
-        {project.details
-          ? <><h3>Cosa abbiamo realizzato</h3><ul>{project.details.map(detail => <li key={detail}>{detail}</li>)}</ul></>
-          : <p>{project.description}</p>}
-        {project.objective && <div className="project-goal"><h3>Obiettivo del progetto</h3><p>{project.objective}</p></div>}
-        {project.url && <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center justify-center gap-3 mt-5 !text-sm">Visita il sito <ExternalLink size={17} aria-hidden="true" /><span className="sr-only"> (si apre in una nuova scheda)</span></a>}
+        <p>{project.description}</p>
+        {project.details && (
+          <>
+            <h3>Cosa abbiamo realizzato</h3>
+            <ul>
+              {project.details.map((detail) => (
+                <li key={detail}>{detail}</li>
+              ))}
+            </ul>
+          </>
+        )}
+        {project.objective && (
+          <div className="project-goal">
+            <h3>Obiettivo del progetto</h3>
+            <p>{project.objective}</p>
+          </div>
+        )}
+        {project.url && <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center justify-center gap-3 mt-5">Visita il sito <ExternalLink size={17} aria-hidden="true" /><span className="sr-only"> (si apre in una nuova scheda)</span></a>}
       </div>
     </dialog>, document.body,
   )

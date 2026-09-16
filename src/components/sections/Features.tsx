@@ -1,16 +1,135 @@
-import { Globe, Bot, Megaphone } from 'lucide-react'
-
+import { ArrowUpRight, Globe2, Sparkles, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
+import Reveal from "../design/Reveal";
+import MobileGallery from "../design/MobileGallery";
+import SectionHeading from "../design/SectionHeading";
 const services = [
-  { icon: Globe, title: 'Sviluppo web', description: 'Siti web per PMI e professionisti, landing page ed e-commerce. Per presentare la tua attività, ricevere richieste e vendere online.' },
-  { icon: Megaphone, title: 'Gestione campagne ads', description: 'Strategia, annunci e ottimizzazione delle campagne su Meta e Google. Per raggiungere persone interessate ai tuoi prodotti o servizi.' },
-  { icon: Bot, title: 'Sviluppo strumenti AI', description: 'Assistenti e strumenti su misura per automatizzare attività ripetitive, consultare documenti e gestire richieste.' },
-]
+  {
+    id: "web",
+    number: "01",
+    icon: Globe2,
+    title: "Sviluppo web",
+    description:
+      "Un sito che spiega perché sceglierti e rende semplice chiedere un preventivo, prenotare o acquistare.",
+    tags: ["Siti web", "E-commerce", "Landing page"],
+    caption: "DALLE VISITE ALLE RICHIESTE",
+    problem: "Hai visite, ma pochi contatti?",
+  },
+  {
+    id: "ads",
+    number: "02",
+    icon: TrendingUp,
+    title: "Campagne ads",
+    description:
+      "Annunci su Meta e Google collegati al tuo sito. Seguiamo pubblico, messaggi e budget per puntare alle richieste che ti servono.",
+    tags: ["Meta Ads", "Google Ads", "Strategia"],
+    caption: "UN OBIETTIVO PER IL TUO BUDGET",
+    problem: "Investi in ads, ma non sai cosa funziona?",
+  },
+  {
+    id: "ai",
+    number: "03",
+    icon: Sparkles,
+    title: "Strumenti AI",
+    description:
+      "Assistenti che gestiscono le prime richieste e automazioni per email e documenti. Tu puoi dedicarti alle attività che richiedono davvero il tuo tempo.",
+    tags: ["Assistenti AI", "Automazioni", "Integrazioni"],
+    caption: "MENO ATTIVITÀ RIPETITIVE",
+    problem: "Rispondi sempre alle stesse domande?",
+  },
+];
 export default function Features({ heading = true }: { heading?: boolean }) {
-  return <section className="py-10 md:py-12 relative" aria-label="I nostri servizi"><div className="container-premium max-w-6xl">
-    {heading && <h2 className="heading-lg text-center text-white mb-9">I nostri <span className="bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">servizi</span></h2>}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">{services.map(service => <article key={service.title} className="bg-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/10 text-center hover:border-primary-400/30 transition-colors">
-      <div className="inline-flex items-center justify-center bg-primary-500/20 w-12 h-12 rounded-xl mb-4"><service.icon className="text-primary-400" size={25} aria-hidden="true" /></div>
-      <h3 className="text-xl font-bold mb-3 text-white">{service.title}</h3><p className="text-gray-300 text-sm md:text-base leading-relaxed">{service.description}</p>
-    </article>)}</div>
-  </div></section>
+  return (
+    <section
+      id="servizi"
+      className="section wrap services-section"
+      aria-label="I nostri servizi"
+    >
+      {heading && (
+        <Reveal>
+          <SectionHeading
+            label="COSA FACCIAMO"
+            title="Ti riconosci?"
+            accent="Partiamo da qui."
+            link="/services"
+            linkText="Tutti i servizi"
+          />
+        </Reveal>
+      )}
+      <MobileGallery
+        className="services-grid"
+        label="Servizi Webbitz"
+        labels={services.map((service) => service.title)}
+      >
+        {services.map((service, i) => (
+          <Reveal
+            key={service.id}
+            delay={i * 0.08}
+            className={`service-card service-${service.id}`}
+          >
+            <article id={service.id}>
+              <div className="service-top">
+                <span className="card-index">/{service.number}</span>
+                <service.icon size={25} strokeWidth={1.3} aria-hidden="true" />
+              </div>
+              <div
+                className={`service-art art-${service.id}`}
+                aria-hidden="true"
+              >
+                {service.id === "web" ? (
+                  <div className="mini-browser">
+                    <div className="browser-dots">
+                      <i />
+                      <i />
+                      <i />
+                    </div>
+                    <div className="browser-layout">
+                      <div>
+                        <span />
+                        <span />
+                        <b />
+                      </div>
+                      <Globe2 size={66} strokeWidth={0.7} />
+                    </div>
+                  </div>
+                ) : service.id === "ads" ? (
+                  <div className="growth-bars">
+                    {[25, 41, 33, 59, 73, 96].map((height, index) => (
+                      <i key={index} style={{ height: `${height}%` }} />
+                    ))}
+                    <TrendingUp />
+                  </div>
+                ) : (
+                  <div className="ai-orbit">
+                    <span />
+                    <span />
+                    <span />
+                    <Sparkles size={41} strokeWidth={1} />
+                  </div>
+                )}
+              </div>
+              <span className="service-caption">{service.caption}</span>
+              <h3>{service.title}</h3>
+              <p className="service-problem">{service.problem}</p>
+              <p>{service.description}</p>
+              <div className="tag-list">
+                {service.tags.map((tag) => (
+                  <span key={tag}>{tag}</span>
+                ))}
+              </div>
+              <Link
+                to={`/contact?service=${service.id}#richiesta`}
+                className="service-link"
+              >
+                Parliamo del tuo obiettivo{" "}
+                <span>
+                  <ArrowUpRight size={19} aria-hidden="true" />
+                </span>
+              </Link>
+            </article>
+          </Reveal>
+        ))}
+      </MobileGallery>
+    </section>
+  );
 }

@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import { ExternalLink } from 'lucide-react'
 import L from 'leaflet'
 import clientLocations from '../../data/clientLocations'
+import MapLocationSelect from './MapLocationSelect'
 import 'leaflet/dist/leaflet.css'
 
 const customIcon = L.divIcon({
@@ -31,13 +32,14 @@ export default function ClientsMap() {
   return <section className="py-12 md:py-16 px-4" aria-labelledby="map-title">
     <div className="max-w-6xl mx-auto">
       <h2 id="map-title" className="heading-lg text-white text-center mb-4">I nostri clienti <span className="text-primary-400">sulla mappa</span></h2>
-      <p className="text-gray-300 text-sm text-center mb-7">Dalla Toscana alla Sardegna, fino ai progetti all’estero.</p>
-      <div className="mb-4 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-        <label htmlFor="map-client" className="text-gray-300 text-sm">Esplora i progetti per località</label>
-        <select id="map-client" value={selected} onChange={event => setSelected(Number(event.target.value))} className="map-client-select">
+      <p className="map-intro text-gray-300 text-sm text-center mb-7">Dalla Toscana alla Sardegna, fino ai progetti all’estero.</p>
+      <div className="map-toolbar">
+        <label htmlFor="map-client" className="map-toolbar-label">Esplora i progetti per località</label>
+        <select id="map-client" value={selected} onChange={event => setSelected(Number(event.target.value))} className="map-client-select map-client-select-native">
           <option value={-1}>Vista generale</option>
           {clientLocations.map((location, index) => <option key={location.name} value={index}>{location.name}</option>)}
         </select>
+        <MapLocationSelect selected={selected} onChange={setSelected} />
       </div>
       <div className="client-map-frame h-[350px] md:h-[520px] rounded-3xl overflow-hidden border border-white/10 shadow-premium" role="region" aria-label="Mappa interattiva dei clienti">
         <MapContainer center={[45, 10]} zoom={5} style={{ height: '100%', width: '100%' }} scrollWheelZoom={false}>

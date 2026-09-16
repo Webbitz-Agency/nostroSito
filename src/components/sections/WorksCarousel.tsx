@@ -1,21 +1,49 @@
-import { useState } from 'react'
-import { projects } from '../../data/projects'
-import type { Project } from '../../data/projects'
-import ProjectCard from '../ProjectCard'
-import ProjectDialog from '../ProjectDialog'
-import { Link } from 'react-router-dom'
-
-const featuredNames = ['Studio Malacarne', 'Pokedo', 'Al Rosso di Sera', 'Vistamare', 'Go2West', 'AlmaryDream']
-const featured = featuredNames.map(name => projects.find(project => project.name === name)!)
-
+import { useState } from "react";
+import { allProjects } from "../../data/projects";
+import type { Project } from "../../data/projects";
+import ProjectCard from "../ProjectCard";
+import ProjectDialog from "../ProjectDialog";
+import Reveal from "../design/Reveal";
+import MobileGallery from "../design/MobileGallery";
+import SectionHeading from "../design/SectionHeading";
+const selectedProjects = [
+  "Vistamare",
+  "Area287",
+  "Studio Malacarne",
+  "La Vela Tirrenia",
+]
+  .map((name) => allProjects.find((project) => project.name === name)!)
+  .filter(Boolean);
 export default function WorksCarousel() {
-  const [selected, setSelected] = useState<Project | null>(null)
-  return <section className="py-10 md:py-14 px-4" aria-labelledby="home-work-title">
-    <div className="max-w-6xl mx-auto">
-      <h2 id="home-work-title" className="heading-lg text-white text-center mb-8">I nostri <span className="bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">lavori</span></h2>
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">{featured.map(project => <ProjectCard key={project.name} project={project} onOpen={() => setSelected(project)} />)}</div>
-      <div className="text-center mt-7"><Link to="/portfolio" className="inline-block py-3 text-sm text-gray-300 underline underline-offset-4 hover:text-primary-400">Tutti i lavori</Link></div>
-    </div>
-    {selected && <ProjectDialog project={selected} onClose={() => setSelected(null)} />}
-  </section>
+  const [selected, setSelected] = useState<Project | null>(null);
+  return (
+    <section className="section wrap featured-work">
+      <Reveal>
+        <SectionHeading
+          label="PROGETTI SELEZIONATI"
+          title="Attività come la tua."
+          accent="Progetti da vedere."
+          link="/lavori"
+          linkText="Esplora tutti i lavori"
+        />
+      </Reveal>
+      <MobileGallery
+        className="featured-grid"
+        label="Progetti in evidenza"
+        labels={selectedProjects.map((project) => project.name)}
+      >
+        {selectedProjects.map((project, i) => (
+          <Reveal key={project.name} delay={(i % 2) * 0.12}>
+            <ProjectCard
+              project={project}
+              onOpen={() => setSelected(project)}
+            />
+          </Reveal>
+        ))}
+      </MobileGallery>
+      {selected && (
+        <ProjectDialog project={selected} onClose={() => setSelected(null)} />
+      )}
+    </section>
+  );
 }
