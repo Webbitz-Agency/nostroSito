@@ -5,7 +5,6 @@ const clientLocations = [
     { lat: 45.4064, lng: 11.8768, name: "Welpy (Padova)", link: "https://www.welpy.it/" },
     { lat: 45.5230, lng: 9.1765, name: "The Admission Hub (Milano)", link: "https://theadmissionhub.com/" },
     { lat: 43.3947, lng: 10.4177, name: "Vistamare (Livorno)", link: "https://www.vistamarerosignano.it/" },
-    { lat: 43.6619, lng: 10.6306, name: "Area287 (Pisa)", link: "https://area287.it" },
     { lat: 43.6719, lng: 10.6406, name: "Fantozzi Bar (Pisa)", link: "https://barfantozzi.it" },
     { lat: 43.5511, lng: 11.2408, name: "Ristoro L'Antica Scuderia (Barberino Tavernelle)", link: "https://www.ristorolanticascuderia.it/" },
     { lat: 43.5515, lng: 11.2412, name: "La Bottega della Scuderia (Firenze)", link: "https://labottegadellascuderia.com" },

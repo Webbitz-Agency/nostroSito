@@ -7,10 +7,12 @@ import Reveal from "../design/Reveal";
 import MobileGallery from "../design/MobileGallery";
 import SectionHeading from "../design/SectionHeading";
 const selectedProjects = [
-  "Vistamare",
-  "Area287",
-  "Studio Malacarne",
   "La Vela Tirrenia",
+  "AlmaryDream",
+  "Pokedo",
+  "Studio Malacarne",
+  "Ristoro L’Antica Scuderia",
+  "Welpy",
 ]
   .map((name) => allProjects.find((project) => project.name === name)!)
   .filter(Boolean);
@@ -33,7 +35,7 @@ export default function WorksCarousel() {
         labels={selectedProjects.map((project) => project.name)}
       >
         {selectedProjects.map((project, i) => (
-          <Reveal key={project.name} delay={(i % 2) * 0.12}>
+          <Reveal key={project.name} delay={(i % 3) * 0.12}>
             <ProjectCard
               project={project}
               onOpen={() => setSelected(project)}

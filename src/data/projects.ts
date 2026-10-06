@@ -19,8 +19,7 @@ export const projects: Project[] = [
     "Sito web",
     "AI"
   ],
-  "image": "/images/clients/malacarne.svg",
-  "imageKind": "logo",
+  "image": "/images/previews/malacarne.webp",
   "url": "https://www.studiomalacarne.com/",
   "description": "Sito web dello studio e assistente AI integrato per raccogliere nuove richieste di consulenza.",
   "objective": "Trasformare le domande dei visitatori in contatti per lo studio.",
@@ -37,15 +36,33 @@ export const projects: Project[] = [
     "Sito web",
     "Gestionale su misura"
   ],
-  "image": "/images/clients/pokedo.webp",
-  "imageKind": "logo",
+  "image": "/images/previews/pokedo.webp",
   "url": "https://www.pokedo.it/",
-  "description": "Sito web e gestionale su misura per menu, ordini e prenotazioni.",
-  "objective": "Semplificare il lavoro del locale e rendere più facile ordinare.",
+  "description": "Sito web con ordini online e gestionale su misura (PokeManager) per gestire menu, ordini e tavoli.",
+  "objective": "Portare online tutto il locale e semplificare il lavoro quotidiano.",
   "details": [
-    "Menu digitale con categorie, prezzi e allergeni.",
-    "Composizione della bowl con ingredienti personalizzabili e ordini in sala o da asporto.",
-    "Gestionale su misura per organizzare ordini, prenotazioni e attività del locale."
+    "Menu digitale con categorie, prezzi e allergeni, sempre aggiornato dal gestionale.",
+    "Composizione della poke bowl con ingredienti personalizzabili e ordini da asporto.",
+    "Ordine in autonomia dal tavolo tramite QR code, per ridurre code ed errori in sala.",
+    "Tutto gestito dal locale con PokeManager, il gestionale su misura che abbiamo sviluppato per Pokedo."
+  ]
+},
+{
+  "name": "PokeManager",
+  "sector": "Software",
+  "tags": [
+    "Gestionale su misura"
+  ],
+  "image": "/images/previews/pokemanager.webp",
+  "description": "Gestionale su misura per ristoranti poke: menu, ordini, tavoli e sito sempre sotto controllo da un unico pannello.",
+  "objective": "Mettere online l’intera infrastruttura del locale e darle in mano al titolare.",
+  "details": [
+    "Gestione del menu: aggiungi, modifica o nascondi piatti, prezzi e disponibilità si aggiornano subito sul sito.",
+    "Regole della poke bowl configurabili: ingredienti, varianti e offerte in pochi click.",
+    "Ordini da asporto e dai tavoli in un pannello unico, con stampa delle comande in cucina.",
+    "Tavoli con QR code: il cliente ordina in autonomia dal telefono.",
+    "Impostazioni del locale: coperto, orari, logo, foto e contenuti del sito.",
+    "Piattaforma multi-cliente, pronta per essere attivata anche su altri locali."
   ]
 },
 {
@@ -87,7 +104,7 @@ export const projects: Project[] = [
     objective: 'Raccogliere contatti di persone che hanno bisogno di assistenza.',
   },
   {
-    name: 'AlmaryDream', details: ["Sito web dedicato alla struttura ricettiva e alle sue camere in Costa Smeralda.", "Campagna Meta per promuovere i soggiorni e portare gli interessati alla richiesta di disponibilità.", "Pagine e annunci allineati, dalla scoperta della struttura alla richiesta di date."], image: '/images/clients/almary.webp', imageKind: 'logo', url: 'https://www.almarydream.com/', sector: 'Ospitalità', tags: ['Sito web', 'Meta Ads'],
+    name: 'AlmaryDream', details: ["Sito web dedicato alla struttura ricettiva e alle sue camere in Costa Smeralda.", "Campagna Meta per promuovere i soggiorni e portare gli interessati alla richiesta di disponibilità.", "Pagine e annunci allineati, dalla scoperta della struttura alla richiesta di date."], image: '/images/previews/almary.webp', url: 'https://www.almarydream.com/', sector: 'Ospitalità', tags: ['Sito web', 'Meta Ads'],
     description: 'Sito web e campagne Meta per una struttura ricettiva in Costa Smeralda.',
     objective: 'Favorire le richieste di disponibilità e le prenotazioni dirette.',
   },
@@ -155,22 +172,6 @@ export const otherProjects: Project[] = [
       "Chiamate all’azione visibili, dalla prima visita alla richiesta di informazioni."
     ],
     "objective": "Far capire l’offerta e raccogliere richieste di contatto."
-  },
-  {
-    "name": "Area287",
-    "url": "https://area287.it",
-    "sector": "Abbigliamento",
-    "tags": [
-      "E-commerce"
-    ],
-    "description": "Sito e negozio online su Shopify.",
-    "image": "/images/previews/area287.webp",
-    "details": [
-      "Negozio online su Shopify, con catalogo, schede prodotto e checkout.",
-      "Identità visiva allineata al brand, dal menù alle schede degli articoli.",
-      "Percorso di acquisto pensato per chi arriva dal sito o dalle campagne."
-    ],
-    "objective": "Portare le visite del sito fino all’acquisto."
   },
   {
     "name": "Fantozzi Bar",

@@ -95,7 +95,6 @@
       "admissionhub": "Sito web AdmissionHub",
       "welpy": "ChatBot Welpy",
       "threshold": "Sito web Threshold",
-      "area287": "E-Commerce Area287",
       "fantozzi": "Sito web Fantozzi Bar",
       "scuderia": "Ristoro Antica Scuderia",
       "bottega": "La Bottega della Scuderia",
@@ -550,46 +549,6 @@
           "Integrazione social media",
           "SEO optimization",
           "Analytics avanzate"
-        ]
-      },
-      "area287Website": {
-        "title": "Area287 - Sito Web",
-        "description": "Sito web per un negozio di abbigliamento street a Pontedera",
-        "longDescription": "Sviluppo di un sito web completo per Area287, negozio di abbigliamento street a Pontedera. Il sito presenta il brand attraverso un design moderno e coinvolgente, con sezioni dedicate alla storia del negozio, alle collezioni e alle iniziative speciali.",
-        "client": "Area287",
-        "duration": "4 settimane",
-        "results": [
-          { "metric": "Visite", "value": "+250%", "description": "Traffico mensile" },
-          { "metric": "Engagement", "value": "+180%", "description": "Tempo di permanenza" },
-          { "metric": "Brand Awareness", "value": "+200%", "description": "Riconoscimento brand" }
-        ],
-        "features": [
-          "Design moderno e responsive",
-          "Sezioni brand storytelling",
-          "Galleria prodotti",
-          "Integrazione social media",
-          "SEO ottimizzato",
-          "Performance elevate"
-        ]
-      },
-      "area287Ecommerce": {
-        "title": "Area287 - E-Commerce",
-        "description": "E-Commerce per un negozio di abbigliamento street a Pontedera",
-        "longDescription": "Sviluppo di un e-commerce completo per Area287, negozio di abbigliamento street a Pontedera. La piattaforma include catalogo prodotti, sistema di pagamento sicuro, gestione ordini e integrazione con Shopify per una gestione ottimale dell'inventario.",
-        "client": "Area287",
-        "duration": "6 settimane",
-        "results": [
-          { "metric": "Vendite Online", "value": "+200%", "description": "Incremento vendite" },
-          { "metric": "Traffico", "value": "+180%", "description": "Visite mensili" },
-          { "metric": "Conversioni", "value": "+150%", "description": "Tasso conversione" }
-        ],
-        "features": [
-          "Catalogo prodotti completo",
-          "Sistema pagamenti sicuro",
-          "Gestione ordini avanzata",
-          "Integrazione Shopify",
-          "Design responsive",
-          "SEO ottimizzato"
         ]
       },
       "fantozziBarWebsite": {
@@ -1138,12 +1097,6 @@
         "name": "Bagno Paradiso",
         "role": "Tirrenia, Livorno",
         "text": "Veloci, creativi e sempre disponibili. Il sito che ci hanno realizzato è esattamente quello che volevamo: fresco, intuitivo e perfetto per i nostri clienti. Ottimo lavoro!",
-        "rating": 5
-      },
-      {
-        "name": "Area287",
-        "role": "Pisa",
-        "text": "Abbiamo affidato a Webbitz la realizzazione del nostro sito e siamo rimasti colpiti dalla cura nel design e dalla velocità di esecuzione. Un team giovane ma estremamente competente.",
         "rating": 5
       }
     ],

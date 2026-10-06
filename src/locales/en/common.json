@@ -95,7 +95,6 @@
       "admissionhub": "AdmissionHub Website",
       "welpy": "Welpy ChatBot",
       "threshold": "Threshold Website",
-      "area287": "Area287 E-Commerce",
       "fantozzi": "Fantozzi Bar Website",
       "scuderia": "Ristoro Antica Scuderia",
       "bottega": "La Bottega della Scuderia",
@@ -550,46 +549,6 @@
           "Social media integration",
           "SEO optimization",
           "Advanced analytics"
-        ]
-      },
-      "area287Website": {
-        "title": "Area287 - Website",
-        "description": "Website for a street clothing store in Pontedera",
-        "longDescription": "Development of a complete website for Area287, street clothing store in Pontedera. The site presents the brand through a modern and engaging design, with sections dedicated to the store's history, collections and special initiatives.",
-        "client": "Area287",
-        "duration": "4 weeks",
-        "results": [
-          { "metric": "Visits", "value": "+250%", "description": "Monthly traffic" },
-          { "metric": "Engagement", "value": "+180%", "description": "Time on site" },
-          { "metric": "Brand Awareness", "value": "+200%", "description": "Brand recognition" }
-        ],
-        "features": [
-          "Modern and responsive design",
-          "Brand storytelling sections",
-          "Product gallery",
-          "Social media integration",
-          "SEO optimized",
-          "High performance"
-        ]
-      },
-      "area287Ecommerce": {
-        "title": "Area287 - E-Commerce",
-        "description": "E-Commerce for a street clothing store in Pontedera",
-        "longDescription": "Development of a complete e-commerce for Area287, street clothing store in Pontedera. The platform includes product catalog, secure payment system, order management and Shopify integration for optimal inventory management.",
-        "client": "Area287",
-        "duration": "6 weeks",
-        "results": [
-          { "metric": "Online Sales", "value": "+200%", "description": "Sales increase" },
-          { "metric": "Traffic", "value": "+180%", "description": "Monthly visits" },
-          { "metric": "Conversions", "value": "+150%", "description": "Conversion rate" }
-        ],
-        "features": [
-          "Complete product catalog",
-          "Secure payment system",
-          "Advanced order management",
-          "Shopify integration",
-          "Responsive design",
-          "SEO optimized"
         ]
       },
       "fantozziBarWebsite": {
