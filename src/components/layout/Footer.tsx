@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { ArrowUpRight, ArrowUp } from "lucide-react";
 import WhatsAppButton from "../WhatsAppButton";
-import logo from "../../assets/logos/logo-bianco.png";
+import logo from "../../assets/logos/webbitz-logo-esteso.svg";
 export default function Footer() {
   const { pathname } = useLocation();
   return (
@@ -39,7 +39,7 @@ export default function Footer() {
               src={logo}
               alt="Webbitz"
               width="150"
-              height="46"
+              height="26"
               className="footer-logo"
             />
           </Link>

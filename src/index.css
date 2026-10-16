@@ -2256,8 +2256,8 @@ article[id] {
   border-top: 1px solid var(--border-color);
 }
 .footer-logo {
-  width: 145px;
-  height: 46px;
+  width: 150px;
+  height: auto;
   object-fit: contain;
   margin-bottom: 15px;
 }

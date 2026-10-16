@@ -3,7 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { ArrowUpRight, Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "../../context/ThemeContext";
 import WhatsAppButton from "../WhatsAppButton";
-import logo from "../../assets/logos/logo-bianco.png";
+import logo from "../../assets/logos/webbitz-logo-esteso.svg";
 
 const items = [
   { name: "Home", path: "/" },
@@ -53,7 +53,7 @@ export default function Navbar() {
             src={logo}
             alt="Webbitz"
             width="144"
-            height="44"
+            height="25"
             className="navbar-logo"
           />
         </Link>
