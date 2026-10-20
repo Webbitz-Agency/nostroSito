@@ -9,7 +9,7 @@ export default function Services() {
         <title>Servizi | Webbitz</title>
         <meta
           name="description"
-          content="Sviluppo siti web ed e-commerce, campagne Meta e Google Ads, assistenti AI e automazioni su misura. Scopri i servizi Webbitz."
+          content="Sviluppo siti web ed e-commerce, campagne Meta e Google Ads, assistenti AI, automazioni, gestionali e CRM su misura. Scopri i servizi Webbitz."
         />
         <link rel="canonical" href="https://www.webbitz.it/services" />
       </Helmet>

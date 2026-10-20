@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { ArrowUpRight, MapPin, Plus } from "lucide-react";
 import PageHeading from "../components/PageHeading";
-import WhatsAppButton from "../components/WhatsAppButton";
+import { WhatsAppButtons } from "../components/WhatsAppButton";
 import ContactForm from "../components/ContactForm";
 const faqs = [
   [
@@ -24,7 +24,7 @@ export default function Contact() {
         <title>Parliamo del tuo progetto | Webbitz</title>
         <meta
           name="description"
-          content="Raccontaci la tua attività. Contatta Webbitz per siti web, campagne ads e strumenti AI: scrivici su WhatsApp oppure richiedi una proposta."
+          content="Raccontaci la tua attività. Contatta Webbitz per siti web, campagne ads, strumenti AI e gestionali: scrivici su WhatsApp oppure richiedi una proposta."
         />
         <link rel="canonical" href="https://www.webbitz.it/contact" />
       </Helmet>
@@ -51,7 +51,7 @@ export default function Contact() {
           </p>
           <div className="phone-block">
             <span>PREFERISCI UNA CHAT?</span>
-            <WhatsAppButton label="Parla con Diego su WhatsApp" />
+            <WhatsAppButtons labelFor={(name) => `Parla con ${name} su WhatsApp`} />
           </div>
           <p className="location-label">
             <MapPin size={16} /> Pontedera, Pisa · Lavoriamo ovunque

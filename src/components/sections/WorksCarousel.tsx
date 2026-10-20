@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { allProjects } from "../../data/projects";
 import type { Project } from "../../data/projects";
-import ProjectCard from "../ProjectCard";
+import WorkCard from "../WorkCard";
 import ProjectDialog from "../ProjectDialog";
 import Reveal from "../design/Reveal";
 import MobileGallery from "../design/MobileGallery";
@@ -25,8 +25,8 @@ export default function WorksCarousel() {
           label="PROGETTI SELEZIONATI"
           title="Attività come la tua."
           accent="Progetti da vedere."
-          link="/lavori"
-          linkText="Esplora tutti i lavori"
+          link="/progetti"
+          linkText="Esplora tutti i progetti"
         />
       </Reveal>
       <MobileGallery
@@ -36,7 +36,7 @@ export default function WorksCarousel() {
       >
         {selectedProjects.map((project, i) => (
           <Reveal key={project.name} delay={(i % 3) * 0.12}>
-            <ProjectCard
+            <WorkCard
               project={project}
               onOpen={() => setSelected(project)}
             />

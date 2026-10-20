@@ -8,64 +8,41 @@ import Features from "../components/sections/Features";
 import WorksCarousel from "../components/sections/WorksCarousel";
 import BusinessApproach from "../components/sections/BusinessApproach";
 import { allProjects } from "../data/projects";
+import type { Project } from "../data/projects";
+import { workLogo } from "../utils/workAssets";
 import { projectSlug } from "../utils/projectSlug";
 import Reveal from "../components/design/Reveal";
 const ClientsMap = lazy(() => import("../components/sections/ClientsMap"));
-const clientLogos = allProjects.filter(
-  (project) => project.imageKind === "logo" && project.image,
-);
+/* Barra dei loghi: i clienti vicini a noi, con il logo chiaro dedicato */
+const localClients = [
+  "Fantozzi Bar",
+  "La Vela Tirrenia",
+  "Bagno Paradiso",
+  "Spicchio Di Luna",
+  "Ristoro L’Antica Scuderia",
+  "La Bottega della Scuderia",
+  "Al Rosso di Sera",
+  "Pokedo",
+  "PokeManager",
+  "Studio Malacarne",
+  "Vistamare",
+];
+const clientLogos = localClients
+  .map((name) => allProjects.find((project) => project.name === name))
+  .filter((project): project is Project => Boolean(project && workLogo(project.name)));
 export default function Home() {
   return (
     <div className="home-page">
       <Helmet>
-        <title>Webbitz | Siti, campagne ads e AI per la tua attività</title>
+        <title>Webbitz | Siti, campagne ads, AI e gestionali per la tua attività</title>
         <meta
           name="description"
-          content="Sviluppo web, campagne Meta e Google Ads e strumenti AI. Webbitz è il tuo studio digitale a Pontedera: creatività, tecnologia e strategia per PMI e professionisti."
+          content="Sviluppo web, campagne Meta e Google Ads, strumenti AI e gestionali. Webbitz è il tuo studio digitale a Pontedera: creatività, tecnologia e strategia per PMI e professionisti."
         />
         <link rel="canonical" href="https://www.webbitz.it/" />
       </Helmet>
       <Hero />
       <AgencyIntro />
-      <section
-        className="brand-section"
-        aria-label="Alcune realtà con cui lavoriamo"
-      >
-        <p className="wrap">CI HANNO SCELTO PER IL LORO DIGITALE.</p>
-        <div className="brand-marquee">
-          <div className="brand-marquee-track">
-            {[0, 1].map((copy) => (
-              <ul
-                className="brand-marquee-group"
-                key={copy}
-                aria-hidden={copy === 1}
-              >
-                {clientLogos.map((project) => (
-                  <li key={`${project.name}-${copy}`}>
-                    <Link
-                      className="brand-logo"
-                      to={`/lavori?progetto=${projectSlug(project.name)}`}
-                      aria-label={
-                        copy === 0
-                          ? `Dettagli del progetto ${project.name}`
-                          : undefined
-                      }
-                      tabIndex={copy === 0 ? undefined : -1}
-                    >
-                      <img
-                        src={project.image}
-                        alt={copy === 0 ? `Logo ${project.name}` : ""}
-                        height={48}
-                        loading="lazy"
-                      />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            ))}
-          </div>
-        </div>
-      </section>
       <section className="intro-section wrap reading-light">
         <Reveal className="intro-copy-block">
           <span className="eyebrow">
@@ -91,12 +68,12 @@ export default function Home() {
             <p className="proof-meta">
               <span className="proof-label-full">progetti da esplorare</span>
               <span className="proof-label-short">progetti</span>
-              <Link to="/lavori">
+              <Link to="/progetti">
                 <span className="proof-link-full">
-                  Guarda i lavori <ArrowUpRight size={13} />
+                  Guarda i progetti <ArrowUpRight size={13} />
                 </span>
                 <span className="proof-link-short">
-                  Lavori <ArrowUpRight size={11} />
+                  Progetti <ArrowUpRight size={11} />
                 </span>
               </Link>
             </p>
@@ -124,6 +101,45 @@ export default function Home() {
             </p>
           </div>
         </section>
+      </section>
+      <section
+        className="brand-section"
+        aria-label="Alcune realtà con cui lavoriamo"
+      >
+        <p className="wrap">CI HANNO SCELTO PER IL LORO DIGITALE.</p>
+        <div className="brand-marquee">
+          <div className="brand-marquee-track">
+            {[0, 1].map((copy) => (
+              <ul
+                className="brand-marquee-group"
+                key={copy}
+                aria-hidden={copy === 1}
+              >
+                {clientLogos.map((project) => (
+                  <li key={`${project.name}-${copy}`}>
+                    <Link
+                      className="brand-logo"
+                      to={`/progetti?progetto=${projectSlug(project.name)}`}
+                      aria-label={
+                        copy === 0
+                          ? `Dettagli del progetto ${project.name}`
+                          : undefined
+                      }
+                      tabIndex={copy === 0 ? undefined : -1}
+                    >
+                      <img
+                        src={workLogo(project.name)}
+                        alt={copy === 0 ? `Logo ${project.name}` : ""}
+                        height={48}
+                        loading="lazy"
+                      />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
+        </div>
       </section>
       <Features />
       <BusinessApproach />

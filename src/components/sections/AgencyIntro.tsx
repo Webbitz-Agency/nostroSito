@@ -6,20 +6,26 @@ const highlights = [
   {
     id: "web",
     label: "Sviluppo web",
-    to: "/lavori?servizio=web",
-    ariaLabel: "Vedi i lavori di sviluppo web",
+    to: "/progetti?servizio=web",
+    ariaLabel: "Vedi i progetti di sviluppo web",
   },
   {
     id: "ads",
     label: "Campagne ads",
-    to: "/lavori?servizio=ads",
-    ariaLabel: "Vedi i lavori di campagne ads",
+    to: "/progetti?servizio=ads",
+    ariaLabel: "Vedi i progetti di campagne ads",
   },
   {
     id: "ai",
     label: "Strumenti AI",
-    to: "/lavori?servizio=ai",
-    ariaLabel: "Vedi i lavori di strumenti AI",
+    to: "/progetti?servizio=ai",
+    ariaLabel: "Vedi i progetti di strumenti AI",
+  },
+  {
+    id: "gestionali",
+    label: "Gestionali",
+    to: "/progetti?servizio=gestionali",
+    ariaLabel: "Vedi i progetti di gestionali",
   },
 ];
 
@@ -53,12 +59,32 @@ function PointArt({ id }: { id: string }) {
       </div>
     );
   }
+  if (id === "ai") {
+    return (
+      <div className="ai-orbit">
+        <span />
+        <span />
+        <span />
+        <Sparkles size={41} strokeWidth={1} />
+      </div>
+    );
+  }
   return (
-    <div className="ai-orbit">
-      <span />
-      <span />
-      <span />
-      <Sparkles size={41} strokeWidth={1} />
+    <div className="mini-dash">
+      <div className="dash-side">
+        <i />
+        <i />
+        <i />
+      </div>
+      <div className="dash-main">
+        {[0, 1, 2].map((row) => (
+          <div className="dash-row" key={row}>
+            <i />
+            <span />
+            <b />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -68,7 +94,7 @@ export default function AgencyIntro() {
     <section className="agency-intro wrap reading-light" aria-labelledby="agency-intro-title">
       <Reveal className="agency-intro-copy">
         <span className="agency-intro-badge">
-          Sviluppo web · Campagne ads · AI
+          Sviluppo web · Campagne ads · AI · Gestionali
         </span>
           <h2 id="agency-intro-title">
             Studio digitale a
@@ -77,7 +103,7 @@ export default function AgencyIntro() {
             <span className="section-accent">siti,</span>
             <br className="agency-intro-break" />{" "}
             <span className="section-accent agency-intro-tail">
-              pubblicità e AI
+              pubblicità, AI e gestionali
             </span>
           </h2>
       </Reveal>
@@ -93,9 +119,10 @@ export default function AgencyIntro() {
             <Link to="/services">siti web</Link> ed e-commerce, gestiamo{" "}
             <Link to="/services">campagne Meta e Google Ads</Link> e
             sviluppiamo <Link to="/services">assistenti AI</Link> collegati ai
-            processi reali dell&apos;attività. Ogni progetto lo seguiamo in
+            processi reali dell&apos;attività, oltre a{" "}
+            <Link to="/services">gestionali e CRM su misura</Link>. Ogni progetto lo seguiamo in
             prima persona: puoi vedere{" "}
-            <Link to="/lavori">alcuni lavori</Link> e conoscere{" "}
+            <Link to="/progetti">alcuni progetti</Link> e conoscere{" "}
             <Link to="/about">chi li realizza</Link>.
           </p>
         </Reveal>

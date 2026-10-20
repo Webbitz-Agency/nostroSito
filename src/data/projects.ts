@@ -124,23 +124,6 @@ export const projects: Project[] = [
 
 export const otherProjects: Project[] = [
   {
-    "name": "ThinkGood Music",
-    "url": "https://www.thinkgoodmusic.com",
-    "sector": "Musica",
-    "tags": [
-      "Sito web",
-      "AI"
-    ],
-    "description": "Sito web e assistente AI per la piattaforma musicale.",
-    "image": "/images/previews/thinkgood.webp",
-    "details": [
-      "Sito della piattaforma musicale, con i contenuti e i servizi organizzati per farsi capire al primo sguardo.",
-      "Assistente AI integrato per rispondere alle prime domande e accompagnare l’utente verso la richiesta giusta.",
-      "Percorso di contatto pensato per chi cerca collaborazioni, informazioni o un punto di accesso rapido al catalogo."
-    ],
-    "objective": "Rendere più semplice scoprire la piattaforma e chiedere informazioni."
-  },
-  {
     "name": "Threshold Coach",
     "url": "https://www.threshold.coach/",
     "sector": "Coaching",
@@ -268,22 +251,6 @@ export const otherProjects: Project[] = [
       "Orari, indirizzo e richieste organizzati in modo semplice."
     ],
     "objective": "Far trovare il locale e rendere più facile il contatto."
-  },
-  {
-    "name": "Diaz Microtorrefazione",
-    "url": "https://diazmicrotorrefazione.com",
-    "sector": "Caffè",
-    "tags": [
-      "E-commerce"
-    ],
-    "description": "Sito web e negozio online per la microtorrefazione.",
-    "image": "/images/previews/diaz.webp",
-    "details": [
-      "Sito e negozio online della microtorrefazione, con i caffè in evidenza.",
-      "Schede prodotto, racconto del brand e acquisto diretto dallo stesso percorso.",
-      "Identità visiva e catalogo allineati al lavoro artigianale della torrefazione."
-    ],
-    "objective": "Portare le persone dal racconto del caffè all’acquisto."
   },
   {
     "name": "Welpy",

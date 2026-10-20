@@ -1,4 +1,4 @@
-import { ArrowUpRight, Globe2, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowUpRight, Globe2, LayoutDashboard, Sparkles, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import Reveal from "../design/Reveal";
 import MobileGallery from "../design/MobileGallery";
@@ -36,6 +36,17 @@ const services = [
     tags: ["Assistenti AI", "Automazioni", "Integrazioni"],
     caption: "MENO ATTIVITÀ RIPETITIVE",
     problem: "Rispondi sempre alle stesse domande?",
+  },
+  {
+    id: "gestionali",
+    number: "04",
+    icon: LayoutDashboard,
+    title: "Gestionali",
+    description:
+      "Gestionali e CRM su misura per tenere clienti, ordini, preventivi e appuntamenti in un unico pannello. Meno fogli sparsi, più tempo per il lavoro vero.",
+    tags: ["Gestionali su misura", "CRM", "Dashboard"],
+    caption: "TUTTO IN UN UNICO PANNELLO",
+    problem: "Gestisci tutto tra fogli Excel e messaggi?",
   },
 ];
 export default function Features({ heading = true }: { heading?: boolean }) {
@@ -99,12 +110,29 @@ export default function Features({ heading = true }: { heading?: boolean }) {
                     ))}
                     <TrendingUp />
                   </div>
-                ) : (
+                ) : service.id === "ai" ? (
                   <div className="ai-orbit">
                     <span />
                     <span />
                     <span />
                     <Sparkles size={41} strokeWidth={1} />
+                  </div>
+                ) : (
+                  <div className="mini-dash">
+                    <div className="dash-side">
+                      <i />
+                      <i />
+                      <i />
+                    </div>
+                    <div className="dash-main">
+                      {[0, 1, 2].map((row) => (
+                        <div className="dash-row" key={row}>
+                          <i />
+                          <span />
+                          <b />
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>

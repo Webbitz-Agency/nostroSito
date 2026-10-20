@@ -25,7 +25,7 @@ export default function Constellation() {
         y: p.y * height + Math.cos(phase * 0.6 + p.offset) * 16,
       }));
       positions.forEach((p, i) => {
-        ctx.fillStyle = "rgba(241,160,110,0.55)";
+        ctx.fillStyle = "rgba(198,173,150,0.55)";
         ctx.beginPath();
         ctx.arc(p.x, p.y, i % 4 === 0 ? 2 : 1, 0, Math.PI * 2);
         ctx.fill();

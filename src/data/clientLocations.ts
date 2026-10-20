@@ -1,5 +1,4 @@
 const clientLocations = [
-    { lat: 45.4592, lng: 9.1768, name: "ThinkGood Music (Milano)", link: "https://www.thinkgoodmusic.com" },
     { lat: 51.7520, lng: -1.2577, name: "Threshold Coach (Oxfordshire)", link: "https://www.threshold.coach/" },
     { lat: 40.6331, lng: -89.3985, name: "RnD Hub (Illinois)", link: "https://rndhub.io/" },
     { lat: 45.4064, lng: 11.8768, name: "Welpy (Padova)", link: "https://www.welpy.it/" },
@@ -11,7 +10,6 @@ const clientLocations = [
     { lat: 43.6167, lng: 10.2833, name: "Bagno Paradiso (Livorno)", link: "https://bagnoparadisotirrenia.it" },
     { lat: 40.8356, lng: 14.2250, name: "Napoli Into Core (Napoli)", link: "https://napolintocore.it" },
     { lat: 43.5500, lng: 10.3167, name: "Spicchio Di Luna (Livorno)", link: "https://spicchiodiluna.it" },
-    { lat: 40.8520, lng: 14.2613, name: "Diaz Microtorrefazione (Napoli)", link: "https://diazmicrotorrefazione.com" },
     { lat: 40.952, lng: 9.479, name: 'AlmaryDream (Baja Sardinia)', link: 'https://www.almarydream.com/' },
     { lat: 43.626, lng: 10.293, name: 'La Vela Tirrenia (Tirrenia)', link: 'https://lavelatirrenia.it/' },
     { lat: 43.666, lng: 10.630, name: 'Al Rosso di Sera (Pontedera)', link: 'https://www.alrossodisera.it/' },

@@ -1,4 +1,4 @@
-import { Navigate, Routes, Route } from "react-router-dom";
+import { Navigate, Routes, Route, useLocation } from "react-router-dom";
 import { MotionConfig } from "framer-motion";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
@@ -11,6 +11,12 @@ import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import { Analytics } from "@vercel/analytics/react";
+
+/* Il vecchio indirizzo /lavori porta a /progetti, mantenendo filtri e progetto aperto */
+function LavoriRedirect() {
+  const { search } = useLocation();
+  return <Navigate to={`/progetti${search}`} replace />;
+}
 
 export default function App() {
   return (
@@ -29,10 +35,11 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/lavori" element={<Portfolio />} />
+            <Route path="/progetti" element={<Portfolio />} />
+            <Route path="/lavori" element={<LavoriRedirect />} />
             <Route
               path="/portfolio"
-              element={<Navigate to="/lavori" replace />}
+              element={<Navigate to="/progetti" replace />}
             />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
@@ -40,7 +47,7 @@ export default function App() {
             <Route path="/faq" element={<Navigate to="/contact" replace />} />
             <Route
               path="/reviews"
-              element={<Navigate to="/lavori" replace />}
+              element={<Navigate to="/progetti" replace />}
             />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

@@ -2,13 +2,13 @@ import { useState, useEffect, useRef } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { ArrowUpRight, Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "../../context/ThemeContext";
-import WhatsAppButton from "../WhatsAppButton";
+import { WhatsAppButtons } from "../WhatsAppButton";
 import logo from "../../assets/logos/webbitz-logo-esteso.svg";
 
 const items = [
   { name: "Home", path: "/" },
   { name: "Servizi", path: "/services" },
-  { name: "Lavori", path: "/lavori" },
+  { name: "Progetti", path: "/progetti" },
   { name: "Studio", path: "/about" },
 ];
 export default function Navbar() {
@@ -108,7 +108,7 @@ export default function Navbar() {
           <Link to="/contact#richiesta" className="button">
             Parliamo del tuo progetto <ArrowUpRight size={20} />
           </Link>
-          <WhatsAppButton className="mobile-whatsapp" />
+          <WhatsAppButtons className="mobile-whatsapp" labelFor={(name) => `Scrivi a ${name}`} />
         </nav>
       )}
     </header>

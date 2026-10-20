@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { ArrowUpRight, ArrowUp } from "lucide-react";
-import WhatsAppButton from "../WhatsAppButton";
+import { WhatsAppButtons } from "../WhatsAppButton";
 import logo from "../../assets/logos/webbitz-logo-esteso.svg";
 export default function Footer() {
   const { pathname } = useLocation();
@@ -52,7 +52,7 @@ export default function Footer() {
         <div className="footer-links">
           <span>ESPLORA</span>
           <Link to="/services">Servizi</Link>
-          <Link to="/lavori">Lavori</Link>
+          <Link to="/progetti">Progetti</Link>
           <Link to="/about">Studio</Link>
         </div>
         <div className="footer-links footer-contact">
@@ -60,7 +60,7 @@ export default function Footer() {
           <Link to="/contact#richiesta" className="button">
             Raccontaci il tuo progetto <ArrowUpRight size={18} aria-hidden="true" />
           </Link>
-          <WhatsAppButton />
+          <WhatsAppButtons labelFor={(name) => `Scrivi a ${name}`} />
           <span className="footer-location">Pontedera · Pisa · Italia</span>
         </div>
       </div>

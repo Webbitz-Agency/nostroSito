@@ -4,10 +4,10 @@ import { useSearchParams } from "react-router-dom";
 import PageHeading from "../components/PageHeading";
 import { allProjects } from "../data/projects";
 import type { Project } from "../data/projects";
-import ProjectCard from "../components/ProjectCard";
+import WorkCard from "../components/WorkCard";
 import ProjectDialog from "../components/ProjectDialog";
 import { findProjectBySlug, projectSlug } from "../utils/projectSlug";
-type CategoryId = "all" | "web" | "ads" | "ai";
+type CategoryId = "all" | "web" | "ads" | "ai" | "gestionali";
 
 type CategoryFilter = {
   id: CategoryId;
@@ -20,10 +20,32 @@ const categories: CategoryFilter[] = [
   { id: "web", label: "Sviluppo web" },
   { id: "ads", label: "Campagne ads" },
   { id: "ai", label: "Strumenti AI", shortLabel: "AI" },
+  { id: "gestionali", label: "Gestionali" },
+];
+
+/* In cima i progetti vicini a noi, poi tutti gli altri nell'ordine dell'elenco */
+const localFirst = [
+  "Fantozzi Bar",
+  "La Vela Tirrenia",
+  "Bagno Paradiso",
+  "Spicchio Di Luna",
+  "Ristoro L’Antica Scuderia",
+  "La Bottega della Scuderia",
+  "Al Rosso di Sera",
+  "Pokedo",
+  "PokeManager",
+  "Studio Malacarne",
+  "Vistamare",
+];
+const orderedProjects = [
+  ...localFirst
+    .map((name) => allProjects.find((project) => project.name === name))
+    .filter((project): project is Project => Boolean(project)),
+  ...allProjects.filter((project) => !localFirst.includes(project.name)),
 ];
 
 function isCategoryId(value: string | null): value is Exclude<CategoryId, "all"> {
-  return value === "web" || value === "ads" || value === "ai";
+  return value === "web" || value === "ads" || value === "ai" || value === "gestionali";
 }
 
 export default function Portfolio() {
@@ -69,7 +91,7 @@ export default function Portfolio() {
     }
   };
 
-  const filtered = allProjects.filter(
+  const filtered = orderedProjects.filter(
     (project) =>
       category === "all" ||
       project.tags.some((tag) =>
@@ -77,24 +99,26 @@ export default function Portfolio() {
           ? ["Sito web", "Landing page", "E-commerce"].includes(tag)
           : category === "ads"
             ? tag.includes("Ads")
-            : tag === "AI",
+            : category === "ai"
+              ? tag === "AI"
+              : /gestional|crm/i.test(tag),
       ),
   );
   return (
     <div>
       <Helmet>
-        <title>Progetti e lavori | Webbitz</title>
+        <title>Progetti | Webbitz</title>
         <meta
           name="description"
-          content="I progetti Webbitz: siti web, campagne Meta e Google Ads e strumenti AI. Scopri il lavoro svolto per attività e professionisti."
+          content="I progetti Webbitz: siti web, campagne Meta e Google Ads, strumenti AI e gestionali. Scopri il lavoro svolto per attività e professionisti."
         />
-        <link rel="canonical" href="https://www.webbitz.it/lavori" />
+        <link rel="canonical" href="https://www.webbitz.it/progetti" />
       </Helmet>
       <PageHeading
         label="IL NOSTRO PORTFOLIO"
         title="Guarda cosa"
         accent="abbiamo fatto."
-        description="Ristoranti, studi professionali, negozi e strutture ricettive. Trova un’attività vicina alla tua e scopri il lavoro svolto: siti, campagne e strumenti AI."
+        description="Ristoranti, studi professionali, negozi e strutture ricettive. Trova un’attività vicina alla tua e scopri il lavoro svolto: siti, campagne, strumenti AI e gestionali."
       />
       <section
         className="wrap portfolio-section"
@@ -104,7 +128,7 @@ export default function Portfolio() {
           <div
             className="portfolio-filters"
             role="group"
-            aria-label="Filtra i lavori per servizio"
+            aria-label="Filtra i progetti per servizio"
           >
             {categories.map((item) => (
               <button
@@ -124,9 +148,9 @@ export default function Portfolio() {
             {String(filtered.length).padStart(2, "0")} progetti
           </span>
         </div>
-        <div className="portfolio-grid">
+        <div className="work-grid">
           {filtered.map((project) => (
-            <ProjectCard
+            <WorkCard
               key={project.name}
               project={project}
               onOpen={() => openProject(project)}

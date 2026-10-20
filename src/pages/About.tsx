@@ -34,7 +34,7 @@ export default function About() {
         <title>Lo studio e il team | Webbitz</title>
         <meta
           name="description"
-          content="Diego, Tommaso e Francesco: il team Webbitz di Pontedera. Sviluppo web, strumenti AI e campagne ads, dal primo confronto alla messa online."
+          content="Diego, Tommaso e Francesco: il team Webbitz di Pontedera. Sviluppo web, strumenti AI, gestionali e campagne ads, dal primo confronto alla messa online."
         />
         <link rel="canonical" href="https://www.webbitz.it/about" />
       </Helmet>

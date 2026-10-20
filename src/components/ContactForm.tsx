@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { useSearchParams } from "react-router-dom";
-import WhatsAppButton from "./WhatsAppButton";
+import { WhatsAppButtons } from "./WhatsAppButton";
 import { ArrowUpRight, CheckCircle2, LoaderCircle } from "lucide-react";
 
 export default function ContactForm() {
@@ -12,6 +12,7 @@ export default function ContactForm() {
         web: "Sviluppo web",
         ads: "Gestione campagne ads",
         ai: "Sviluppo strumenti AI",
+        gestionali: "Sviluppo gestionali e CRM",
       } as Record<string, string>
     )[searchParams.get("service") || ""] || "";
   const [status, setStatus] = useState<
@@ -125,6 +126,7 @@ export default function ContactForm() {
             <option>Sviluppo web</option>
             <option>Gestione campagne ads</option>
             <option>Sviluppo strumenti AI</option>
+            <option>Sviluppo gestionali e CRM</option>
           </select>
         </label>
       </div>
@@ -158,7 +160,7 @@ export default function ContactForm() {
       {status === "error" && (
         <div className="form-error" role="alert">
           <p>{error}</p>
-          <WhatsAppButton />
+          <WhatsAppButtons labelFor={(name) => `Scrivi a ${name}`} />
         </div>
       )}
       <button
