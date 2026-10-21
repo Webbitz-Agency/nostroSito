@@ -1,8 +1,10 @@
 import { FaWhatsapp } from "react-icons/fa";
 
-const message = encodeURIComponent(
-  "Ciao Webbitz! Vorrei parlarvi della mia attività e capire come potete aiutarmi.",
-);
+/* Messaggio precompilato, personalizzato con il nome di chi riceve */
+const message = (name: string) =>
+  encodeURIComponent(
+    `Ciao ${name}! Vorrei parlarti della mia attività e capire come puoi aiutarmi.`,
+  );
 
 const people = {
   diego: { name: "Diego", number: "393391797616" },
@@ -11,8 +13,11 @@ const people = {
 
 type Person = keyof typeof people;
 
+export const whatsappUrlForNumber = (number: string, name: string) =>
+  `https://wa.me/${number}?text=${message(name)}`;
+
 export const whatsappUrl = (person: Person = "diego") =>
-  `https://wa.me/${people[person].number}?text=${message}`;
+  whatsappUrlForNumber(people[person].number, people[person].name);
 
 export default function WhatsAppButton({
   className = "",

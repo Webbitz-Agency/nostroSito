@@ -1,30 +1,41 @@
 import { Helmet } from "react-helmet-async";
-import { ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import PageHeading from "../components/PageHeading";
 import MobileGallery from "../components/design/MobileGallery";
 import Reveal from "../components/design/Reveal";
+import { whatsappUrlForNumber } from "../components/WhatsAppButton";
 const team = [
   {
     name: "Diego",
     image: "diego",
-    role: "SVILUPPO · AI · ADS · COMMERCIALE",
+    surname: "Simoncini",
+    roles: ["AI", "Ads", "Commerciale"],
+    whatsapp: { label: "+39 339 179 7616", number: "393391797616" },
+    email: "diego.simoncini@webbitz.it",
     description:
-      "Realizzo siti, strumenti AI e campagne su Meta e Google. Dal primo confronto al preventivo, seguo il tuo progetto dall’inizio alla fine.",
-  },
-  {
-    name: "Tommaso",
-    image: "Tommi2",
-    role: "SVILUPPO · DESIGN",
-    description:
-      "Mi occupo di come si vede e si usa il sito. Metto insieme grafica, informazioni e codice per creare percorsi semplici e riconoscibili.",
+      "Sviluppo strumenti AI e imposto le campagne su Meta e Google. Dal primo confronto al preventivo, seguo il tuo progetto dall’inizio alla fine.",
   },
   {
     name: "Francesco",
     image: "Baro",
-    role: "SVILUPPO · AI · ADS",
+    surname: "Barone",
+    roles: ["Sviluppo", "Gestionali", "AI"],
+    whatsapp: { label: "+39 370 337 4703", number: "393703374703" },
+    email: "francesco.barone@webbitz.it",
     description:
-      "Costruisco siti, assistenti AI e campagne pubblicitarie. Collego tecnologia e comunicazione per accompagnare le persone verso la tua attività.",
+      "Scrivo il codice di siti e gestionali su misura e ci porto dentro l’AI, dagli assistenti alle automazioni. Trasformo i processi della tua attività in strumenti che funzionano ogni giorno.",
+  },
+  {
+    name: "Tommaso",
+    image: "Tommi2",
+    surname: "Guezze",
+    roles: ["Sviluppo", "Design"],
+    whatsapp: { label: "+39 370 317 3289", number: "393703173289" },
+    email: "",
+    description:
+      "Mi occupo di come si vede e si usa il sito. Metto insieme grafica, informazioni e codice per creare percorsi semplici e riconoscibili.",
   },
 ];
 export default function About() {
@@ -63,21 +74,59 @@ export default function About() {
         >
           {team.map((member, i) => (
             <Reveal key={member.name} delay={i * 0.1}>
-              <article className="team-card">
-                <div className="team-photo">
-                  <span className="team-index">0{i + 1} / WEBBITZ</span>
+              <article className="member-card">
+                <div className="member-photo">
                   <img
                     src={`/TeamWebbitzAI/${member.image}.webp`}
                     alt={member.name}
-                    width="480"
-                    height="480"
+                    width="336"
+                    height="336"
                     loading="lazy"
                   />
-                  <ArrowUpRight size={33} aria-hidden="true" />
                 </div>
-                <h2>{member.name}</h2>
-                <span className="team-role">{member.role}</span>
+                <h2>
+                  <span>{member.name}</span>
+                  {member.surname && (
+                    <span className="member-surname">{member.surname}</span>
+                  )}
+                </h2>
+                <ul className="member-roles" aria-label="Competenze">
+                  {member.roles.map((role) => (
+                    <li key={role}>{role}</li>
+                  ))}
+                </ul>
                 <p>{member.description}</p>
+                <ul className="member-contacts" aria-label={`Contatta ${member.name}`}>
+                  <li>
+                    <a
+                      href={whatsappUrlForNumber(member.whatsapp.number, member.name)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="member-icon member-icon-whatsapp" aria-hidden="true">
+                        <FaWhatsapp size={18} />
+                      </span>
+                      <span className="member-contact-label">
+                        {member.whatsapp.label}
+                      </span>
+                      <span className="sr-only">
+                        {" "}
+                        WhatsApp di {member.name} (si apre in una nuova scheda)
+                      </span>
+                    </a>
+                  </li>
+                  {member.email && (
+                    <li>
+                      <a href={`mailto:${member.email}`}>
+                        <span className="member-icon" aria-hidden="true">
+                          <Mail size={18} />
+                        </span>
+                        <span className="member-contact-label">{member.email}</span>
+                        <span className="sr-only"> Email di {member.name}</span>
+                      </a>
+                    </li>
+                  )}
+                </ul>
               </article>
             </Reveal>
           ))}
