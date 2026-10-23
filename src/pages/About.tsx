@@ -79,8 +79,8 @@ export default function About() {
                   <img
                     src={`/TeamWebbitzAI/${member.image}.webp`}
                     alt={member.name}
-                    width="336"
-                    height="336"
+                    width="250"
+                    height="270"
                     loading="lazy"
                   />
                 </div>
